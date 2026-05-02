@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reading FC — Welcome to the Select Car Leasing Stadium</title>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Arial Black', 'Arial', sans-serif;
+      background: #000;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* ── STADIUM SCENE ── */
+    #scene {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      background: linear-gradient(
+        180deg,
+        #020510 0%,
+        #03092e 18%,
+        #001a5c 35%,
+        #003087 50%,
+        #00419e 60%,
+        #194f1a 72%,
+        #27692a 82%,
+        #2e7c31 100%
+      );
+      overflow: hidden;
+    }
+
+    /* ── STARS ── */
+    #stars { position: absolute; inset: 0; pointer-events: none; }
+    .star {
+      position: absolute;
+      background: #fff;
+      border-radius: 50%;
+      animation: twinkle var(--dur, 2s) infinite alternate;
+    }
+    @keyframes twinkle {
+      from { opacity: 0.15; transform: scale(1); }
+      to   { opacity: 1;    transform: scale(1.3); }
+    }
+
+    /* ── FLOODLIGHTS ── */
+    #lights {
+      position: absolute; inset: 0; pointer-events: none;
+    }
+    .beam {
+      position: absolute;
+      top: 0;
+      width: 280px;
+      height: 65%;
+      background: radial-gradient(ellipse 60% 100% at 50% 0%,
+        rgba(255,255,200,0.13) 0%,
+        transparent 80%);
+    }
+    .beam:nth-child(1) { left:  3%;  transform: rotate(-18deg); }
+    .beam:nth-child(2) { left: 22%;  transform: rotate(-6deg);  }
+    .beam:nth-child(3) { right: 22%; transform: rotate(6deg);   }
+    .beam:nth-child(4) { right: 3%;  transform: rotate(18deg);  }
+
+    /* ── PITCH OVERLAY ── */
+    #pitch-overlay {
+      position: absolute;
+      bottom: 108px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 72%;
+      opacity: 0.12;
+      pointer-events: none;
+    }
+
+    /* ── MAIN CONTENT ── */
+    #content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      padding: 54px 20px 160px;
+      pointer-events: none;
+    }
+
+    /* Badge */
+    #badge { width: 130px; height: 130px; margin: 0 auto 22px; }
+
+    /* Text */
+    .label {
+      font-size: .85rem;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: #8ab4ff;
+      animation: slideDown .9s ease both;
+    }
+    h1 {
+      font-size: clamp(2.6rem, 8vw, 5.5rem);
+      font-weight: 900;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      line-height: 1;
+      text-shadow: 0 0 40px rgba(0,80,200,.9), 3px 3px 0 #001f6e;
+      animation: slideDown .9s ease .25s both;
+    }
+    h1 em { color: #5badff; font-style: normal; }
+    .subtitle {
+      margin-top: 12px;
+      font-size: clamp(.95rem, 2.5vw, 1.35rem);
+      color: #b8d0ff;
+      font-style: italic;
+      font-weight: normal;
+      animation: slideDown .9s ease .45s both;
+    }
+
+    /* Scoreboard */
+    #board {
+      display: inline-block;
+      margin: 26px auto 0;
+      padding: 10px 28px;
+      background: rgba(0,0,0,.72);
+      border: 2px solid #4d9fff;
+      box-shadow: 0 0 18px #1a5fff88, inset 0 0 12px #00184488;
+      font-family: 'Courier New', monospace;
+      font-size: 1.1rem;
+      letter-spacing: 3px;
+      color: #5ec8ff;
+      animation: borderPulse 2.4s infinite, slideDown .9s ease .65s both;
+    }
+    @keyframes borderPulse {
+      0%,100% { border-color:#4d9fff; box-shadow:0 0 18px #1a5fff88; }
+      50%      { border-color:#003087; box-shadow:0 0 28px #003087bb; }
+    }
+
+    /* Nav */
+    #nav {
+      display: flex; flex-wrap: wrap; gap: 14px;
+      justify-content: center;
+      margin-top: 30px;
+      animation: slideDown .9s ease .85s both;
+      pointer-events: all;
+    }
+    .btn {
+      padding: 11px 28px;
+      border: 2px solid #fff;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: .85rem;
+      font-weight: 700;
+      cursor: pointer;
+      background: transparent;
+      text-decoration: none;
+      transition: background .25s, color .25s, transform .15s;
+    }
+    .btn:hover { background:#fff; color:#003087; transform:translateY(-2px); }
+    .btn-primary { background:#003087; border-color:#5badff; }
+    .btn-primary:hover { background:#5badff; color:#001040; border-color:#5badff; }
+
+    .footer-line {
+      margin-top: 28px;
+      font-size: .8rem;
+      color: rgba(255,255,255,.4);
+      letter-spacing: 2px;
+      animation: slideDown .9s ease 1.05s both;
+    }
+
+    @keyframes slideDown {
+      from { opacity:0; transform:translateY(-28px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+
+    /* ── SOCCER BALL ── */
+    #ball {
+      position: fixed;
+      width: 52px; height: 52px;
+      font-size: 48px;
+      line-height: 1;
+      cursor: pointer;
+      z-index: 200;
+      user-select: none;
+      filter: drop-shadow(0 6px 14px rgba(0,0,0,.6));
+      pointer-events: all;
+    }
+    #ball-shadow {
+      position: fixed;
+      width: 38px; height: 10px;
+      background: rgba(0,0,0,.4);
+      border-radius: 50%;
+      z-index: 199;
+      filter: blur(4px);
+      pointer-events: none;
+    }
+
+    /* ── CROWD ── */
+    #crowd {
+      position: fixed;
+      bottom: 0; left: 0;
+      width: 100%; height: 110px;
+      z-index: 50;
+      background: linear-gradient(to top, #00102a 30%, transparent 100%);
+      overflow: hidden;
+      pointer-events: none;
+    }
+    #crowd svg {
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%; height: 100%;
+    }
+
+    /* ── CONFETTI ── */
+    .flake {
+      position: fixed;
+      z-index: 300;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: fall linear forwards;
+    }
+    @keyframes fall {
+      0%   { transform: translateY(-12px) rotate(0deg);   opacity: 1; }
+      100% { transform: translateY(110vh) rotate(800deg); opacity: 0; }
+    }
+
+    /* ── CHEER WAVE TEXT ── */
+    #cheer-text {
+      position: fixed;
+      bottom: 115px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,.0);
+      font-size: 1.4rem;
+      font-weight: 900;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      z-index: 60;
+      white-space: nowrap;
+      pointer-events: none;
+      text-shadow: 0 0 20px #5badff;
+      transition: opacity .3s;
+    }
+  </style>
+</head>
+<body>
+
+<div id="scene">
+  <div id="stars"></div>
+  <div id="lights">
+    <div class="beam"></div>
+    <div class="beam"></div>
+    <div class="beam"></div>
+    <div class="beam"></div>
+  </div>
+
+  <!-- Pitch markings -->
+  <div id="pitch-overlay">
+    <svg viewBox="0 0 720 200" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="1" width="718" height="198" fill="none" stroke="white" stroke-width="2.5"/>
+      <line x1="360" y1="1" x2="360" y2="199" stroke="white" stroke-width="2"/>
+      <circle cx="360" cy="100" r="58" fill="none" stroke="white" stroke-width="2"/>
+      <circle cx="360" cy="100" r="3" fill="white"/>
+      <rect x="278" y="152" width="164" height="47" fill="none" stroke="white" stroke-width="2"/>
+      <rect x="315" y="178" width="90" height="22" fill="none" stroke="white" stroke-width="2"/>
+      <path d="M315 199 Q315 162 278 162" fill="none" stroke="white" stroke-width="2"/>
+      <path d="M405 199 Q405 162 442 162" fill="none" stroke="white" stroke-width="2"/>
+    </svg>
+  </div>
+
+  <!-- Main content -->
+  <div id="content">
+    <!-- SVG badge -->
+    <svg id="badge" viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="bg" cx="50%" cy="40%">
+          <stop offset="0%" stop-color="#0050cc"/>
+          <stop offset="100%" stop-color="#001f6e"/>
+        </radialGradient>
+      </defs>
+      <!-- Shield -->
+      <path d="M65 6 L118 28 L118 76 Q118 112 65 124 Q12 112 12 76 L12 28 Z"
+            fill="url(#bg)" stroke="#5badff" stroke-width="2.5"/>
+      <!-- Hoops -->
+      <path d="M12 46 L118 46 L118 58 L12 58 Z" fill="white" opacity=".88"/>
+      <path d="M12 67 L118 67 L118 79 L12 79 Z" fill="white" opacity=".88"/>
+      <!-- RFC lettering -->
+      <text x="65" y="44" text-anchor="middle" fill="white"
+            font-size="19" font-weight="900" font-family="Arial Black,Arial">RFC</text>
+      <!-- Stag silhouette (simplified) -->
+      <g transform="translate(51,81) scale(0.28)" fill="#ffd700">
+        <path d="M50 0 L55 20 L65 15 L60 30 L70 25 L58 40 L62 70 L50 65 L38 70 L42 40 L30 25 L40 30 L35 15 L45 20 Z"/>
+      </g>
+      <!-- Stars -->
+      <text x="65" y="118" text-anchor="middle" fill="#ffd700" font-size="17">★ ★ ★</text>
+    </svg>
+
+    <p class="label">Welcome to</p>
+    <h1>Reading <em>FC</em></h1>
+    <p class="subtitle">The Royals &mdash; Select Car Leasing Stadium, Reading</p>
+
+    <div id="board">&#9917; MATCH DAY &#9917; &nbsp; 00:00</div>
+
+    <div id="nav">
+      <a class="btn btn-primary" href="#">Fixtures</a>
+      <a class="btn" href="#">Squad</a>
+      <a class="btn" href="#">Tickets</a>
+      <a class="btn" href="#">News</a>
+      <a class="btn" href="#">Shop</a>
+    </div>
+
+    <p class="footer-line">Est. 1871 &nbsp;&#8226;&nbsp; Royal Berkshire &nbsp;&#8226;&nbsp; Together We Rise</p>
+  </div>
+</div>
+
+<!-- Soccer ball & shadow -->
+<div id="ball-shadow"></div>
+<div id="ball" title="Click to kick!">&#9917;</div>
+
+<!-- Crowd -->
+<div id="crowd"><svg id="crowd-svg" xmlns="http://www.w3.org/2000/svg"></svg></div>
+
+<!-- Cheer wave text -->
+<div id="cheer-text">COME ON YOU ROYALS!</div>
+
+<script>
+// ─── STARS ───────────────────────────────────────────────
+(function(){
+  const c = document.getElementById('stars');
+  for(let i=0;i<90;i++){
+    const s=document.createElement('div');
+    s.className='star';
+    const sz=(Math.random()*2+.5)+'px';
+    s.style.cssText=`
+      left:${Math.random()*100}%;
+      top:${Math.random()*45}%;
+      width:${sz};height:${sz};
+      --dur:${(1.5+Math.random()*2.5).toFixed(1)}s;
+      animation-delay:${(Math.random()*2).toFixed(2)}s
+    `;
+    c.appendChild(s);
+  }
+})();
+
+// ─── CLOCK ───────────────────────────────────────────────
+(function(){
+  const el=document.getElementById('board');
+  let s=0;
+  setInterval(()=>{
+    s++;
+    const m=String(Math.floor(s/60)).padStart(2,'0');
+    const sc=String(s%60).padStart(2,'0');
+    el.innerHTML=`&#9917; MATCH DAY &#9917; &nbsp; ${m}:${sc}`;
+  },1000);
+})();
+
+// ─── BALL PHYSICS ─────────────────────────────────────────
+(function(){
+  const ball   = document.getElementById('ball');
+  const shadow = document.getElementById('ball-shadow');
+  const R = 52;
+  let x = innerWidth/2, y = 120;
+  let vx = 3.8, vy = 2.2, rot = 0;
+  const grav = 0.18, damp = 0.72, fric = 0.992;
+  const FLOOR = () => innerHeight - R - 110; // above crowd
+
+  function step(){
+    vy += grav;
+    vx *= fric;
+    x += vx; y += vy;
+
+    // walls
+    if(x < 0)            { x=0;           vx=Math.abs(vx)*damp; }
+    if(x > innerWidth-R) { x=innerWidth-R;vx=-Math.abs(vx)*damp; }
+    if(y < 0)            { y=0;           vy=Math.abs(vy)*damp; }
+    if(y > FLOOR())      { y=FLOOR();
+      vy=-Math.abs(vy)*damp;
+      vx += (Math.random()-.5)*0.8;
+    }
+
+    // keep alive
+    if(Math.abs(vx)<0.6) vx=(Math.random()>.5?1:-1)*(1.5+Math.random()*2);
+
+    rot += vx*3;
+    ball.style.left   = x+'px';
+    ball.style.top    = y+'px';
+    ball.style.transform = `rotate(${rot}deg)`;
+
+    // shadow
+    const floorY = FLOOR()+R+10;
+    const dist   = Math.max(1, floorY-y);
+    const scale  = Math.max(.2, 1-(dist/400));
+    const opacity= Math.max(.05, .45-(dist/500));
+    shadow.style.left    = (x+R/2-19*scale)+'px';
+    shadow.style.top     = (floorY-8)+'px';
+    shadow.style.width   = (38*scale)+'px';
+    shadow.style.opacity = opacity;
+
+    requestAnimationFrame(step);
+  }
+  step();
+
+  // Kick on click of ball
+  ball.addEventListener('pointerdown', e=>{
+    vx=(Math.random()-.5)*22;
+    vy=-(8+Math.random()*12);
+    e.stopPropagation();
+  });
+
+  // Nearby click repels ball
+  document.addEventListener('click', e=>{
+    const cx=x+R/2, cy=y+R/2;
+    const dx=cx-e.clientX, dy=cy-e.clientY;
+    const d=Math.hypot(dx,dy);
+    if(d<180 && d>1){
+      const f=(180-d)/14;
+      vx+=dx/d*f; vy+=dy/d*f-4;
+    }
+  });
+
+  window.addEventListener('resize',()=>{
+    if(x>innerWidth-R)  x=innerWidth-R;
+    if(y>FLOOR())       y=FLOOR();
+  });
+})();
+
+// ─── CROWD SVG ────────────────────────────────────────────
+(function(){
+  const svg = document.getElementById('crowd-svg');
+  const W   = window.innerWidth;
+  const H   = 110;
+  svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+  svg.setAttribute('preserveAspectRatio','none');
+
+  const palette = [
+    ['#003087','#5badff'],
+    ['#003087','#ffffff'],
+    ['#ffffff','#003087'],
+    ['#5badff','#001f6e'],
+    ['#ffd700','#003087'],
+  ];
+
+  const spacing = 20;
+  const count   = Math.ceil(W / spacing) + 2;
+  let defs = '<defs>';
+
+  // Build wave-arm keyframes per figure (offset by index)
+  for(let i=0;i<count;i++){
+    const delay = (i * 0.06) % 2.4;
+    const dur   = 0.55 + (i%5)*0.07;
+    defs += `
+      <style>
+        .fa${i} { animation: cheer${i} ${dur}s ${delay}s ease-in-out infinite alternate; }
+        @keyframes cheer${i} {
+          from { transform: translateX(${i*spacing}px) translateY(0); }
+          to   { transform: translateX(${i*spacing}px) translateY(-${7+i%6}px); }
+        }
+        .la${i} { animation: la${i}a ${dur}s ${delay}s ease-in-out infinite alternate; }
+        @keyframes la${i}a {
+          from { transform: rotate(-${30+i%25}deg); }
+          to   { transform: rotate(${20+i%20}deg); }
+        }
+        .ra${i} { animation: ra${i}a ${dur}s ${delay}s ease-in-out infinite alternate; }
+        @keyframes ra${i}a {
+          from { transform: rotate(${30+i%25}deg); }
+          to   { transform: rotate(-${20+i%20}deg); }
+        }
+      </style>`;
+  }
+  defs += '</defs>';
+  svg.innerHTML = defs;
+
+  for(let i=0;i<count;i++){
+    const cx    = i * spacing + 10;
+    const h     = 55 + (i%7)*6;
+    const skinH = 12 + (i%3)*1;
+    const bodyH = h - skinH - 4;
+    const [c1,c2] = palette[i%palette.length];
+    const skinTone = i%4===0?'#f4c08a': i%4===1?'#c8856a': i%4===2?'#8b5e3c':'#fad5a5';
+
+    // group with cheer animation
+    const g = document.createElementNS('http://www.w3.org/2000/svg','g');
+    g.setAttribute('class',`fa${i}`);
+
+    // body/shirt
+    const body = document.createElementNS('http://www.w3.org/2000/svg','rect');
+    body.setAttribute('x', -7); body.setAttribute('y', H-h);
+    body.setAttribute('width', 14); body.setAttribute('height', bodyH);
+    body.setAttribute('rx','3'); body.setAttribute('fill', c1);
+
+    // stripe on shirt
+    const stripe = document.createElementNS('http://www.w3.org/2000/svg','rect');
+    stripe.setAttribute('x',-7); stripe.setAttribute('y', H-h+bodyH*.35);
+    stripe.setAttribute('width',14); stripe.setAttribute('height',3);
+    stripe.setAttribute('fill',c2); stripe.setAttribute('opacity','.7');
+
+    // head
+    const head = document.createElementNS('http://www.w3.org/2000/svg','ellipse');
+    head.setAttribute('cx',0); head.setAttribute('cy', H-h-skinH/2);
+    head.setAttribute('rx',6); head.setAttribute('ry', skinH/2);
+    head.setAttribute('fill', skinTone);
+
+    // left arm
+    const la = document.createElementNS('http://www.w3.org/2000/svg','line');
+    la.setAttribute('x1',-7); la.setAttribute('y1', H-h+8);
+    la.setAttribute('x2',-18);la.setAttribute('y2', H-h+2);
+    la.setAttribute('stroke',c1); la.setAttribute('stroke-width','4');
+    la.setAttribute('stroke-linecap','round');
+    la.setAttribute('class',`la${i}`);
+    la.setAttribute('style','transform-origin:-7px '+(H-h+8)+'px');
+
+    // right arm
+    const ra = document.createElementNS('http://www.w3.org/2000/svg','line');
+    ra.setAttribute('x1', 7); ra.setAttribute('y1', H-h+8);
+    ra.setAttribute('x2', 18);ra.setAttribute('y2', H-h+2);
+    ra.setAttribute('stroke',c1); ra.setAttribute('stroke-width','4');
+    ra.setAttribute('stroke-linecap','round');
+    ra.setAttribute('class',`ra${i}`);
+    ra.setAttribute('style','transform-origin:7px '+(H-h+8)+'px');
+
+    g.appendChild(body); g.appendChild(stripe);
+    g.appendChild(la);   g.appendChild(ra);
+    g.appendChild(head);
+
+    // offset x via transform base (cheer animation overrides)
+    g.style.transform = `translateX(${cx}px)`;
+    svg.appendChild(g);
+  }
+})();
+
+// ─── CONFETTI ─────────────────────────────────────────────
+(function(){
+  const colours=['#003087','#5badff','#ffffff','#ffd700','#ff3355','#00d4ff'];
+  function drop(){
+    const el=document.createElement('div');
+    el.className='flake';
+    const sz=(4+Math.random()*9)+'px';
+    el.style.cssText=`
+      left:${Math.random()*100}vw;
+      top:-14px;
+      width:${sz};height:${sz};
+      background:${colours[Math.floor(Math.random()*colours.length)]};
+      border-radius:${Math.random()>.45?'50%':'2px'};
+      animation-duration:${(3+Math.random()*5).toFixed(1)}s;
+      animation-delay:${(Math.random()*1.5).toFixed(2)}s;
+    `;
+    document.body.appendChild(el);
+    setTimeout(()=>el.remove(), 9000);
+  }
+  // Opening burst
+  for(let i=0;i<60;i++) setTimeout(drop, i*80);
+  // Steady stream
+  setInterval(()=>{ for(let i=0;i<4;i++) drop(); }, 900);
+})();
+
+// ─── CHEER TEXT WAVE ──────────────────────────────────────
+(function(){
+  const el=document.getElementById('cheer-text');
+  function show(){
+    el.style.color='rgba(255,255,255,.85)';
+    setTimeout(()=>{ el.style.color='rgba(255,255,255,.0)'; }, 1800);
+  }
+  setTimeout(show, 1500);
+  setInterval(show, 7000);
+})();
+</script>
+</body>
+</html>
