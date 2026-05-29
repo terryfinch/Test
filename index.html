@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en" data-geo="US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Abbott is a global healthcare leader that helps people live more fully at all stages of life. Our portfolio of life-changing technologies spans the spectrum of healthcare.">
+<meta property="og:title" content="Abbott — Life. To the Fullest.">
+<meta property="og:description" content="A global healthcare company dedicated to helping people live fuller, healthier lives.">
+<meta property="og:type" content="website">
+<!-- Hreflang geo SEO -->
+<link rel="alternate" hreflang="x-default" href="/">
+<link rel="alternate" hreflang="en"    href="/?lang=en">
+<link rel="alternate" hreflang="en-US" href="/?region=us">
+<link rel="alternate" hreflang="en-GB" href="/?region=gb">
+<link rel="alternate" hreflang="en-CA" href="/?region=ca">
+<link rel="alternate" hreflang="en-AU" href="/?region=au">
+<link rel="alternate" hreflang="de"    href="/?region=de">
+<link rel="alternate" hreflang="fr"    href="/?region=fr">
+<link rel="alternate" hreflang="es"    href="/?region=es">
+<link rel="alternate" hreflang="pt-BR" href="/?region=br">
+<link rel="alternate" hreflang="ja"    href="/?region=jp">
+<link rel="alternate" hreflang="zh-CN" href="/?region=cn">
+<link rel="alternate" hreflang="ko"    href="/?region=kr">
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"Abbott Laboratories",
+  "url":"https://www.abbott.com",
+  "description":"A global healthcare leader helping people live more fully at all stages of life.",
+  "foundingDate":"1888",
+  "numberOfEmployees":{"@type":"QuantitativeValue","value":"115000"},
+  "address":{"@type":"PostalAddress","streetAddress":"100 Abbott Park Road","addressLocality":"Abbott Park","addressRegion":"Illinois","postalCode":"60064","addressCountry":"US"},
+  "sameAs":["https://twitter.com/AbbottNews","https://www.linkedin.com/company/abbott-","https://www.facebook.com/Abbott"]
+}
+</script>
+<title>Abbott — Life. To the Fullest.</title>
+<style>
+/* ── RESET & BASE ─────────────────────────────────────────────── */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;color:#1a1a2e;background:#fff;overflow-x:hidden;line-height:1.5}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button{cursor:pointer;border:none;background:none;font:inherit}
+ul{list-style:none}
+
+/* ── VARIABLES ────────────────────────────────────────────────── */
+:root{
+  --blue:#006DB6;--blue-dark:#003F7D;--blue-mid:#005A9E;
+  --blue-light:#4DACE8;--blue-pale:#E8F3FB;
+  --red:#CE0037;--white:#fff;--off-white:#F4F7FB;
+  --g1:#F0F4F8;--g2:#D8E2EC;--g3:#9EB3C8;
+  --gt:#4A5568;--gd:#2D3748;--black:#0D1117;
+  --tr:.3s ease;--sh:0 4px 24px rgba(0,63,125,.12);
+  --shl:0 8px 40px rgba(0,63,125,.18);--shs:0 2px 8px rgba(0,63,125,.08);
+  --r:4px;--max:1280px;--hh:72px;
+}
+
+/* ── UTIL BAR ─────────────────────────────────────────────────── */
+#util{background:var(--blue-dark);color:rgba(255,255,255,.7);font-size:.78rem;letter-spacing:.4px;padding:0 24px;height:34px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:200}
+#util a{color:rgba(255,255,255,.7);transition:color var(--tr)}
+#util a:hover{color:#fff}
+.ul,.ur{display:flex;align-items:center;gap:18px}
+#geo-pill{display:flex;align-items:center;gap:6px;cursor:pointer;border:1px solid rgba(255,255,255,.25);padding:3px 11px;border-radius:20px;transition:all var(--tr);font-size:.78rem}
+#geo-pill:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.5)}
+#geo-flag{font-size:1rem}#geo-name{color:#fff;font-weight:700}
+
+/* ── HEADER ───────────────────────────────────────────────────── */
+#hdr{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid var(--g2);box-shadow:var(--shs);height:var(--hh);transition:box-shadow var(--tr)}
+#hdr.scrolled{box-shadow:var(--sh)}
+.hi{max-width:var(--max);margin:0 auto;height:100%;display:flex;align-items:center;padding:0 24px;gap:28px}
+#logo{flex-shrink:0;font-size:2rem;font-weight:900;color:var(--blue);letter-spacing:-1.5px;line-height:1}
+#logo b{color:var(--blue-dark)}
+#mnav{display:flex;align-items:center;gap:2px;flex:1}
+.ni{position:relative}
+.nl{display:flex;align-items:center;gap:4px;padding:8px 13px;font-size:.875rem;font-weight:600;color:var(--gd);border-radius:var(--r);transition:all var(--tr);white-space:nowrap;cursor:pointer}
+.nl:hover,.ni.open .nl{color:var(--blue);background:var(--blue-pale)}
+.nchev{font-size:.55rem;color:var(--g3);transition:transform var(--tr)}
+.ni.open .nchev{transform:rotate(180deg)}
+.mega{display:none;position:absolute;top:calc(100% + 6px);left:-20px;width:500px;background:#fff;border:1px solid var(--g2);border-radius:10px;box-shadow:var(--shl);padding:20px;z-index:500;grid-template-columns:1fr 1fr;gap:6px}
+.ni.open .mega{display:grid}
+.mi{padding:11px 14px;border-radius:8px;transition:background var(--tr);cursor:pointer}
+.mi:hover{background:var(--blue-pale)}
+.mi h4{font-size:.875rem;font-weight:700;color:var(--blue-dark);margin-bottom:3px}
+.mi p{font-size:.75rem;color:var(--gt);line-height:1.4}
+.mdiv{grid-column:1/-1;border-top:1px solid var(--g1);margin:4px 0}
+.hr{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.bsrch{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gd);transition:all var(--tr);font-size:1.05rem}
+.bsrch:hover{background:var(--blue-pale);color:var(--blue)}
+.bcta{background:var(--blue);color:#fff;padding:9px 20px;border-radius:24px;font-size:.84rem;font-weight:700;letter-spacing:.3px;transition:all var(--tr);white-space:nowrap}
+.bcta:hover{background:var(--blue-dark);transform:translateY(-1px);box-shadow:var(--sh)}
+#ham{display:none;width:36px;height:36px;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+#ham span{display:block;width:22px;height:2px;background:var(--gd);border-radius:2px;transition:all var(--tr)}
+
+/* ── GEO BANNER ───────────────────────────────────────────────── */
+#gbanner{background:linear-gradient(135deg,#dbeeff,var(--blue-pale));border-bottom:1px solid #b8d9f5;padding:9px 24px;display:flex;align-items:center;justify-content:center;gap:12px;font-size:.875rem;position:relative;z-index:50;animation:sd .4s ease}
+#gbanner.gone{display:none}
+#gbanner strong{color:var(--blue-dark)}
+.gchg{padding:4px 14px;border-radius:20px;border:1.5px solid var(--blue);color:var(--blue);font-size:.78rem;font-weight:700;transition:all var(--tr)}
+.gchg:hover{background:var(--blue);color:#fff}
+.gdism{position:absolute;right:16px;font-size:1.2rem;color:var(--g3);transition:color var(--tr);line-height:1}
+.gdism:hover{color:var(--blue-dark)}
+@keyframes sd{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+
+/* ── HERO ─────────────────────────────────────────────────────── */
+#hero{position:relative;overflow:hidden;height:calc(100vh - var(--hh) - 34px - 40px);min-height:500px;max-height:760px}
+.slide{position:absolute;inset:0;display:flex;align-items:center;opacity:0;transition:opacity .9s ease;pointer-events:none}
+.slide.active{opacity:1;pointer-events:all}
+.slide:nth-child(1){background:linear-gradient(135deg,#001e4d 0%,#003F7D 45%,#006DB6 80%,#0090d0 100%)}
+.slide:nth-child(2){background:linear-gradient(135deg,#1b0035 0%,#3b1070 45%,#5e2d92 80%,#7f4db8 100%)}
+.slide:nth-child(3){background:linear-gradient(135deg,#002111 0%,#003d20 45%,#006033 80%,#008845 100%)}
+.sc{max-width:var(--max);margin:0 auto;padding:0 40px;width:100%;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:56px}
+.st{color:#fff;z-index:2}
+.stag{display:inline-block;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.28);padding:5px 14px;border-radius:20px;font-size:.75rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.9);margin-bottom:18px}
+.sh{font-size:clamp(2rem,4.2vw,3.2rem);font-weight:900;line-height:1.08;margin-bottom:14px;letter-spacing:-.5px}
+.ss{font-size:clamp(.9rem,1.4vw,1.1rem);color:rgba(255,255,255,.8);line-height:1.65;margin-bottom:28px;max-width:480px}
+.sbtns{display:flex;gap:12px;flex-wrap:wrap}
+.bp{background:#fff;color:var(--blue-dark);padding:12px 26px;border-radius:30px;font-size:.88rem;font-weight:700;transition:all var(--tr)}
+.bp:hover{background:var(--blue-pale);transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.2)}
+.bo{border:2px solid rgba(255,255,255,.55);color:#fff;padding:10px 24px;border-radius:30px;font-size:.88rem;font-weight:700;transition:all var(--tr)}
+.bo:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+.sv{display:flex;align-items:center;justify-content:center;height:340px;position:relative}
+.sv svg{filter:drop-shadow(0 24px 56px rgba(0,0,0,.3));animation:flt 5s ease-in-out infinite alternate}
+@keyframes flt{from{transform:translateY(0) rotate(-.5deg)}to{transform:translateY(-14px) rotate(.5deg)}}
+#cdots{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:10}
+.dot{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.3);border:none;cursor:pointer;transition:all var(--tr)}
+.dot.on{background:#fff;transform:scale(1.35)}
+.carr{position:absolute;top:50%;transform:translateY(-50%);z-index:10;width:44px;height:44px;background:rgba(255,255,255,.14);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.28);border-radius:50%;color:#fff;font-size:1rem;display:flex;align-items:center;justify-content:center;transition:all var(--tr)}
+.carr:hover{background:rgba(255,255,255,.28)}
+#ap{left:18px}#an{right:18px}
+
+/* ── SEGMENTS ─────────────────────────────────────────────────── */
+#segs{padding:72px 24px;background:var(--off-white)}
+.sec-lbl{text-align:center;font-size:.75rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+.sec-h{text-align:center;font-size:clamp(1.6rem,3vw,2.3rem);font-weight:900;color:var(--blue-dark);margin-bottom:10px;letter-spacing:-.5px}
+.sec-s{text-align:center;font-size:1rem;color:var(--gt);max-width:580px;margin:0 auto 44px;line-height:1.65}
+.sgrid{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.sc2{background:#fff;border-radius:14px;padding:30px 22px;box-shadow:var(--shs);border:1px solid var(--g2);transition:all var(--tr);cursor:pointer;overflow:hidden;position:relative}
+.sc2::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--cc,var(--blue));transform:scaleX(0);transform-origin:left;transition:transform var(--tr)}
+.sc2:hover{transform:translateY(-6px);box-shadow:var(--shl)}
+.sc2:hover::before{transform:scaleX(1)}
+.si{width:60px;height:60px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.9rem;margin-bottom:18px}
+.sc2 h3{font-size:1rem;font-weight:800;color:var(--blue-dark);margin-bottom:8px}
+.sc2 p{font-size:.84rem;color:var(--gt);line-height:1.6;margin-bottom:18px}
+.sl{font-size:.82rem;font-weight:700;color:var(--blue);display:flex;align-items:center;gap:5px;transition:gap var(--tr)}
+.sc2:hover .sl{gap:9px}
+
+/* ── STATS ────────────────────────────────────────────────────── */
+#stats{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 100%);padding:52px 24px;color:#fff}
+.sgr{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+.ss2{border-right:1px solid rgba(255,255,255,.18);padding:8px 0}
+.ss2:last-child{border-right:none}
+.sn{font-size:clamp(2rem,4vw,3rem);font-weight:900;color:#fff;letter-spacing:-1px;line-height:1;margin-bottom:6px}
+.sn em{color:var(--blue-light);font-style:normal}
+.sl2{font-size:.84rem;color:rgba(255,255,255,.72);font-weight:500}
+
+/* ── NEWS ─────────────────────────────────────────────────────── */
+#news{padding:72px 24px;background:#fff}
+.ngrid{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.nc{border-radius:12px;overflow:hidden;box-shadow:var(--shs);border:1px solid var(--g2);transition:all var(--tr);cursor:pointer;display:flex;flex-direction:column}
+.nc:hover{transform:translateY(-4px);box-shadow:var(--sh)}
+.nth{height:190px;display:flex;align-items:center;justify-content:center;font-size:3.2rem;position:relative;overflow:hidden;background:var(--nbg,var(--blue-pale))}
+.nth::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 50%,rgba(0,0,0,.12))}
+.ncat{position:absolute;top:10px;left:10px;z-index:2;background:var(--blue);color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.8px;padding:3px 9px;border-radius:20px;text-transform:uppercase}
+.nb{padding:18px;flex:1;display:flex;flex-direction:column}
+.nd{font-size:.75rem;color:var(--g3);margin-bottom:6px}
+.nt{font-size:.96rem;font-weight:700;color:var(--gd);line-height:1.4;margin-bottom:10px;flex:1}
+.ne{font-size:.82rem;color:var(--gt);line-height:1.5;margin-bottom:14px}
+.nr{font-size:.82rem;font-weight:700;color:var(--blue);display:flex;align-items:center;gap:5px;transition:gap var(--tr)}
+.nc:hover .nr{gap:9px}
+.ncta{max-width:var(--max);margin:28px auto 0;text-align:center}
+.btn-out{display:inline-flex;align-items:center;gap:8px;padding:11px 28px;border:2px solid var(--blue);color:var(--blue);border-radius:30px;font-size:.88rem;font-weight:700;transition:all var(--tr)}
+.btn-out:hover{background:var(--blue);color:#fff;transform:translateY(-2px)}
+
+/* ── INNOVATION ───────────────────────────────────────────────── */
+#inno{padding:80px 24px;background:linear-gradient(135deg,#0D1117 0%,#152238 50%,#0D1117 100%);position:relative;overflow:hidden}
+#inno::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 75% at 55% 55%,rgba(0,109,182,.22),transparent 70%)}
+.ii{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:2}
+.it{color:#fff}
+.it .sec-lbl{text-align:left}
+.it .sec-h{text-align:left;color:#fff;font-size:clamp(1.5rem,2.8vw,2.2rem)}
+.it .sec-s{text-align:left;color:rgba(255,255,255,.7);margin:0 0 28px}
+.ifs{display:flex;flex-direction:column;gap:14px}
+.ifeat{display:flex;align-items:flex-start;gap:14px;padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.03);transition:all var(--tr)}
+.ifeat:hover{border-color:rgba(77,172,232,.38);background:rgba(0,109,182,.1)}
+.fico{width:42px;height:42px;flex-shrink:0;background:rgba(0,109,182,.28);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.ifeat h4{font-size:.88rem;font-weight:700;color:#fff;margin-bottom:3px}
+.ifeat p{font-size:.78rem;color:rgba(255,255,255,.58);line-height:1.5}
+.iv{display:flex;align-items:center;justify-content:center}
+.globe{width:320px;height:320px;border-radius:50%;background:radial-gradient(circle at 38% 32%,#1a5f9e,#003F7D 60%,#001520);position:relative;box-shadow:0 0 80px rgba(0,109,182,.38),inset -20px -20px 40px rgba(0,0,0,.45);animation:gpulse 5s ease-in-out infinite}
+.globe::after{content:'';position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 32% 26%,rgba(255,255,255,.14),transparent 48%)}
+@keyframes gpulse{0%,100%{box-shadow:0 0 80px rgba(0,109,182,.38),inset -20px -20px 40px rgba(0,0,0,.45)}50%{box-shadow:0 0 110px rgba(0,144,208,.48),inset -20px -20px 40px rgba(0,0,0,.45)}}
+.glines{position:absolute;inset:10px;border-radius:50%;border:1px dashed rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center}
+.glines::before{content:'';position:absolute;width:100%;height:1px;background:rgba(255,255,255,.12)}
+.glines::after{content:'';position:absolute;width:1px;height:100%;background:rgba(255,255,255,.12)}
+.gpin{position:absolute;font-size:.85rem;animation:gpulse 2s ease-in-out infinite alternate}
+.gpin:nth-child(1){top:25%;left:20%}
+.gpin:nth-child(2){top:40%;right:22%}
+.gpin:nth-child(3){bottom:28%;left:35%}
+.gpin:nth-child(4){top:18%;right:35%;animation-delay:.6s}
+.gpin:nth-child(5){bottom:20%;right:20%;animation-delay:1.2s}
+
+/* ── TICKER ───────────────────────────────────────────────────── */
+#ticker{background:var(--g1);border-top:1px solid var(--g2);border-bottom:1px solid var(--g2);padding:11px 24px;display:flex;align-items:center;gap:18px;font-size:.82rem;overflow:hidden}
+.tlbl{flex-shrink:0;font-weight:700;color:var(--blue-dark);display:flex;align-items:center;gap:7px}
+.tdot{width:7px;height:7px;border-radius:50%;background:var(--blue);animation:tdp 1.8s ease-in-out infinite}
+@keyframes tdp{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+.tscr{overflow:hidden;flex:1;position:relative;height:1.3em}
+.ttrk{display:flex;gap:48px;white-space:nowrap;animation:tmv 28s linear infinite}
+@keyframes tmv{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ti{display:flex;align-items:center;gap:7px;color:var(--gd)}
+.tsym{font-weight:800;color:var(--blue-dark)}
+.tpr{font-weight:700}
+.tc{font-size:.74rem;font-weight:600}
+.up{color:#16a34a}.dn{color:var(--red)}
+
+/* ── REGION MODAL ─────────────────────────────────────────────── */
+#rmod{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.52);backdrop-filter:blur(5px);align-items:center;justify-content:center}
+#rmod.open{display:flex}
+.mbox{background:#fff;border-radius:16px;width:min(800px,96vw);max-height:88vh;overflow-y:auto;box-shadow:0 24px 80px rgba(0,0,0,.28);animation:min .3s ease}
+@keyframes min{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+.mhd{padding:22px 26px 18px;border-bottom:1px solid var(--g2);display:flex;align-items:flex-start;justify-content:space-between}
+.mhd div h3{font-size:1.08rem;font-weight:800;color:var(--blue-dark)}
+.mhd div p{font-size:.82rem;color:var(--gt);margin-top:3px}
+.mcls{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--g3);font-size:1.25rem;transition:all var(--tr)}
+.mcls:hover{background:var(--g1);color:var(--gd)}
+.mbd{padding:22px 26px}
+.rgrp{margin-bottom:24px}
+.rgt{font-size:.72rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--g3);margin-bottom:10px;padding-bottom:7px;border-bottom:1px solid var(--g1)}
+.cgrd{display:grid;grid-template-columns:repeat(auto-fill,minmax(162px,1fr));gap:7px}
+.cbtn{display:flex;align-items:center;gap:7px;padding:7px 11px;border-radius:8px;font-size:.82rem;color:var(--gd);transition:all var(--tr);text-align:left;border:1px solid transparent}
+.cbtn:hover{background:var(--blue-pale);border-color:#b8d9f5;color:var(--blue-dark)}
+.cbtn.cur{background:var(--blue);color:#fff;border-color:var(--blue)}
+.cflag{font-size:1.05rem}
+
+/* ── SEARCH OVERLAY ───────────────────────────────────────────── */
+#sover{display:none;position:fixed;inset:0;z-index:600;background:rgba(0,20,50,.92);backdrop-filter:blur(12px);align-items:flex-start;justify-content:center;padding-top:110px}
+#sover.open{display:flex}
+.sbox{width:min(660px,92vw)}
+.siw{position:relative;background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.28);border-radius:12px;overflow:hidden;transition:border-color var(--tr)}
+.siw:focus-within{border-color:var(--blue-light)}
+#sinp{width:100%;padding:17px 56px 17px 20px;background:transparent;border:none;outline:none;font-size:1.1rem;color:#fff;font:inherit}
+#sinp::placeholder{color:rgba(255,255,255,.45)}
+.ssub{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.55);font-size:1.15rem}
+.shints{margin-top:18px;display:flex;flex-wrap:wrap;gap:7px}
+.ht{padding:5px 13px;border-radius:20px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.68);font-size:.82rem;cursor:pointer;transition:all var(--tr)}
+.ht:hover{background:rgba(0,109,182,.45);border-color:var(--blue-light);color:#fff}
+#scls{position:absolute;top:22px;right:22px;color:rgba(255,255,255,.55);font-size:1.45rem;transition:color var(--tr)}
+#scls:hover{color:#fff}
+
+/* ── MOBILE NAV ───────────────────────────────────────────────── */
+#mobnav{display:none;position:fixed;top:var(--hh);left:0;right:0;bottom:0;z-index:80;background:#fff;overflow-y:auto;transform:translateX(100%);transition:transform .28s ease}
+#mobnav.open{transform:translateX(0)}
+.mnl{display:flex;align-items:center;justify-content:space-between;padding:17px 24px;font-size:.96rem;font-weight:600;color:var(--gd);border-bottom:1px solid var(--g1);transition:background var(--tr)}
+.mnl:hover{background:var(--blue-pale)}
+
+/* ── FOOTER ───────────────────────────────────────────────────── */
+#ftr{background:var(--blue-dark);color:rgba(255,255,255,.68)}
+.ft{max-width:var(--max);margin:0 auto;padding:52px 24px 44px;display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr 1fr;gap:36px}
+.fb{color:#fff}
+.flogo{font-size:1.75rem;font-weight:900;color:#fff;letter-spacing:-1px;margin-bottom:14px}
+.ftag{font-size:.82rem;color:rgba(255,255,255,.55);line-height:1.65;margin-bottom:22px}
+.fsoc{display:flex;gap:9px}
+.fsb{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.09);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.65);font-size:.84rem;transition:all var(--tr)}
+.fsb:hover{background:var(--blue);color:#fff;transform:translateY(-2px)}
+.fc h4{font-size:.74rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#fff;margin-bottom:14px}
+.fc ul{display:flex;flex-direction:column;gap:9px}
+.fc li a{font-size:.82rem;color:rgba(255,255,255,.58);transition:color var(--tr)}
+.fc li a:hover{color:#fff}
+.fb2{border-top:1px solid rgba(255,255,255,.09);padding:18px 24px;max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.76rem;color:rgba(255,255,255,.4)}
+.fbl{display:flex;gap:18px;flex-wrap:wrap}
+.fbl a{color:rgba(255,255,255,.4);transition:color var(--tr)}
+.fbl a:hover{color:rgba(255,255,255,.8)}
+
+/* ── FADE-IN ANIMATIONS ───────────────────────────────────────── */
+.fu{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.fu.vis{opacity:1;transform:none}
+.fu2{opacity:0;transform:translateY(28px);transition:opacity .65s ease .15s,transform .65s ease .15s}
+.fu2.vis{opacity:1;transform:none}
+.fu3{opacity:0;transform:translateY(28px);transition:opacity .65s ease .3s,transform .65s ease .3s}
+.fu3.vis{opacity:1;transform:none}
+
+/* ── RESPONSIVE ───────────────────────────────────────────────── */
+@media(max-width:1024px){
+  .sgrid{grid-template-columns:repeat(2,1fr)}
+  .ii{grid-template-columns:1fr;gap:36px}
+  .iv{display:none}
+  .ft{grid-template-columns:1fr 1fr 1fr}
+  .sgr{grid-template-columns:repeat(2,1fr)}
+  .ss2:nth-child(2){border-right:none}
+  .ss2:nth-child(3){border-right:1px solid rgba(255,255,255,.18)}
+}
+@media(max-width:768px){
+  :root{--hh:60px}
+  #mnav{display:none}
+  #ham{display:flex}
+  .sc{grid-template-columns:1fr;padding-top:32px}
+  .sv{display:none}
+  .ngrid{grid-template-columns:1fr}
+  .ft{grid-template-columns:1fr 1fr}
+  .sgr{grid-template-columns:1fr 1fr}
+  .ul{display:none}
+}
+@media(max-width:480px){
+  .ft{grid-template-columns:1fr}
+  .sgrid{grid-template-columns:1fr}
+  .sgr{grid-template-columns:1fr 1fr}
+  .ss2{border-right:none!important;border-bottom:1px solid rgba(255,255,255,.14);padding-bottom:18px}
+  .ss2:last-child{border-bottom:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ── UTIL BAR ──────────────────────────────────────────────── -->
+<div id="util">
+  <div class="ul">
+    <a href="#">Careers</a>
+    <a href="#">Investors</a>
+    <a href="#">Media</a>
+    <a href="#">Contact</a>
+  </div>
+  <div class="ur">
+    <button id="geo-pill" onclick="openModal()">
+      <span id="geo-flag">🌐</span>
+      <span id="geo-name">Global</span>
+      <span style="color:rgba(255,255,255,.4);font-size:.65rem;margin-left:2px">▾</span>
+    </button>
+  </div>
+</div>
+
+<!-- ── HEADER ────────────────────────────────────────────────── -->
+<header id="hdr">
+  <div class="hi">
+    <a href="#" id="logo">a<b>bb</b>ott</a>
+    <nav id="mnav">
+      <div class="ni" data-nav="about">
+        <button class="nl">About Abbott <span class="nchev">▾</span></button>
+        <div class="mega">
+          <div class="mi"><h4>Our Story</h4><p>137 years of life-changing innovation in healthcare</p></div>
+          <div class="mi"><h4>Leadership</h4><p>Meet the executives guiding Abbott's global vision</p></div>
+          <div class="mi"><h4>Mission & Values</h4><p>How we put people at the center of everything we do</p></div>
+          <div class="mi"><h4>Global Presence</h4><p>Operating in 160+ countries and territories worldwide</p></div>
+          <div class="mdiv"></div>
+          <div class="mi"><h4>Diversity & Inclusion</h4><p>Building a workforce as diverse as the patients we serve</p></div>
+          <div class="mi"><h4>Awards & Recognition</h4><p>Industry awards and analyst rankings</p></div>
+        </div>
+      </div>
+      <div class="ni" data-nav="products">
+        <button class="nl">Products & Services <span class="nchev">▾</span></button>
+        <div class="mega">
+          <div class="mi"><h4>Medical Devices</h4><p>Heart, neuro, spine, and structural heart technologies</p></div>
+          <div class="mi"><h4>Diagnostics</h4><p>Core lab, molecular, point-of-care, and rapid testing</p></div>
+          <div class="mi"><h4>Established Pharmaceuticals</h4><p>Quality branded medicines across emerging markets</p></div>
+          <div class="mi"><h4>Nutrition</h4><p>Science-backed nutrition products for every life stage</p></div>
+          <div class="mdiv"></div>
+          <div class="mi"><h4>FreeStyle Libre</h4><p>The world's most worn continuous glucose monitoring system</p></div>
+          <div class="mi"><h4>All Products</h4><p>Browse our complete portfolio of healthcare solutions</p></div>
+        </div>
+      </div>
+      <div class="ni" data-nav="innovation">
+        <button class="nl">Innovation <span class="nchev">▾</span></button>
+        <div class="mega">
+          <div class="mi"><h4>R&D Pipeline</h4><p>Next-generation technologies in clinical development</p></div>
+          <div class="mi"><h4>Science & Technology</h4><p>Breakthrough research shaping the future of health</p></div>
+          <div class="mi"><h4>Digital Health</h4><p>Connected devices and data-driven health insights</p></div>
+          <div class="mi"><h4>Partnerships</h4><p>Collaborating with academia and industry innovators</p></div>
+        </div>
+      </div>
+      <div class="ni" data-nav="sustain">
+        <button class="nl">Sustainability <span class="nchev">▾</span></button>
+        <div class="mega">
+          <div class="mi"><h4>Environmental Goals</h4><p>Net-zero carbon, water stewardship and waste reduction</p></div>
+          <div class="mi"><h4>Social Impact</h4><p>Expanding access to healthcare in underserved communities</p></div>
+          <div class="mi"><h4>ESG Reports</h4><p>Annual sustainability reporting and progress metrics</p></div>
+          <div class="mi"><h4>Abbott Fund</h4><p>Our philanthropic arm advancing global health equity</p></div>
+        </div>
+      </div>
+      <div class="ni" data-nav="news">
+        <button class="nl">Newsroom <span class="nchev">▾</span></button>
+        <div class="mega">
+          <div class="mi"><h4>Press Releases</h4><p>Latest official announcements from Abbott</p></div>
+          <div class="mi"><h4>Media Resources</h4><p>Images, B-roll, and executive biographies</p></div>
+          <div class="mi"><h4>Investor News</h4><p>Earnings, SEC filings, and financial updates</p></div>
+          <div class="mi"><h4>Podcast & Video</h4><p>Health science stories told through media</p></div>
+        </div>
+      </div>
+    </nav>
+    <div class="hr">
+      <button class="bsrch" id="srch-btn" title="Search" onclick="openSearch()">&#128269;</button>
+      <a href="#" class="bcta">Explore Careers</a>
+      <button id="ham" onclick="toggleMob()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ── MOBILE NAV ─────────────────────────────────────────────── -->
+<div id="mobnav">
+  <a href="#" class="mnl">About Abbott <span>›</span></a>
+  <a href="#" class="mnl">Products &amp; Services <span>›</span></a>
+  <a href="#" class="mnl">Innovation <span>›</span></a>
+  <a href="#" class="mnl">Sustainability <span>›</span></a>
+  <a href="#" class="mnl">Investors <span>›</span></a>
+  <a href="#" class="mnl">Newsroom <span>›</span></a>
+  <a href="#" class="mnl">Careers <span>›</span></a>
+  <div style="padding:20px 24px;border-top:2px solid var(--blue-pale)">
+    <button onclick="openModal()" style="width:100%;padding:12px;border:2px solid var(--blue);color:var(--blue);border-radius:8px;font-size:.9rem;font-weight:700;background:none;cursor:pointer">
+      🌐 Change Region
+    </button>
+  </div>
+</div>
+
+<!-- ── GEO BANNER ─────────────────────────────────────────────── -->
+<div id="gbanner">
+  <span id="gbtxt">🌐 &nbsp;Detecting your location…</span>
+  <button class="gchg" onclick="openModal()">Change Region</button>
+  <button class="gdism" onclick="dismissBanner()" title="Dismiss">×</button>
+</div>
+
+<!-- ── HERO CAROUSEL ──────────────────────────────────────────── -->
+<section id="hero" aria-label="Featured stories">
+
+  <!-- Slide 1: Medical Devices -->
+  <div class="slide active">
+    <div class="sc">
+      <div class="st">
+        <span class="stag">Medical Devices</span>
+        <h1 class="sh" id="h-headline">Life. To the Fullest.</h1>
+        <p class="ss" id="h-sub">Abbott is a global healthcare leader helping people live more fully at every stage of life — from heart health and diabetes management to diagnostics and nutrition.</p>
+        <div class="sbtns">
+          <a href="#" class="bp">Explore Our Products</a>
+          <a href="#" class="bo">Our Story</a>
+        </div>
+      </div>
+      <div class="sv">
+        <svg width="280" height="280" viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg">
+          <!-- Heart device illustration -->
+          <circle cx="140" cy="140" r="120" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+          <circle cx="140" cy="140" r="85" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+          <!-- Heart shape -->
+          <path d="M140 185 C140 185 90 155 80 128 C72 107 85 88 105 88 C118 88 130 96 140 108 C150 96 162 88 175 88 C195 88 208 107 200 128 C190 155 140 185 140 185Z" fill="rgba(255,100,120,0.9)" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+          <!-- Pulse line -->
+          <polyline points="60,140 90,140 105,118 115,158 125,130 135,150 145,140 190,140 210,140" fill="none" stroke="#4DACE8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+          <!-- Dots -->
+          <circle cx="60" cy="140" r="3" fill="#4DACE8" opacity="0.7"/>
+          <circle cx="210" cy="140" r="3" fill="#4DACE8" opacity="0.7"/>
+          <!-- Outer ring details -->
+          <circle cx="140" cy="44" r="5" fill="rgba(255,255,255,0.5)"/>
+          <circle cx="236" cy="88" r="4" fill="rgba(77,172,232,0.7)"/>
+          <circle cx="236" cy="192" r="4" fill="rgba(77,172,232,0.7)"/>
+          <circle cx="140" cy="236" r="5" fill="rgba(255,255,255,0.5)"/>
+          <circle cx="44" cy="192" r="4" fill="rgba(77,172,232,0.7)"/>
+          <circle cx="44" cy="88" r="4" fill="rgba(77,172,232,0.7)"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 2: Diagnostics -->
+  <div class="slide">
+    <div class="sc">
+      <div class="st">
+        <span class="stag">Diagnostics</span>
+        <h1 class="sh">Testing That Transforms Lives</h1>
+        <p class="ss">From hospital core labs to rapid home tests, Abbott's diagnostics portfolio runs over 9 billion tests each year — delivering answers when it matters most.</p>
+        <div class="sbtns">
+          <a href="#" class="bp">View Diagnostics</a>
+          <a href="#" class="bo">Our Lab Technology</a>
+        </div>
+      </div>
+      <div class="sv">
+        <svg width="280" height="280" viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg">
+          <!-- Lab device illustration -->
+          <circle cx="140" cy="140" r="120" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+          <!-- Test tube 1 -->
+          <rect x="95" y="80" width="28" height="90" rx="14" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+          <rect x="95" y="130" width="28" height="40" rx="0 0 14 14" fill="rgba(77,172,232,0.5)"/>
+          <!-- Test tube 2 -->
+          <rect x="135" y="65" width="28" height="105" rx="14" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+          <rect x="135" y="110" width="28" height="60" rx="0 0 14 14" fill="rgba(150,100,255,0.5)"/>
+          <!-- Test tube 3 -->
+          <rect x="175" y="78" width="28" height="92" rx="14" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.25)" stroke-width="2"/>
+          <rect x="175" y="128" width="28" height="42" rx="0 0 14 14" fill="rgba(100,220,120,0.5)"/>
+          <!-- Stand -->
+          <rect x="80" y="175" width="130" height="10" rx="5" fill="rgba(255,255,255,0.2)"/>
+          <rect x="100" y="185" width="12" height="30" rx="3" fill="rgba(255,255,255,0.15)"/>
+          <rect x="190" y="185" width="12" height="30" rx="3" fill="rgba(255,255,255,0.15)"/>
+          <rect x="80" y="212" width="130" height="8" rx="4" fill="rgba(255,255,255,0.15)"/>
+          <!-- DNA helix dots -->
+          <circle cx="55" cy="100" r="4" fill="rgba(77,172,232,0.7)"/>
+          <circle cx="55" cy="115" r="3" fill="rgba(255,255,255,0.4)"/>
+          <circle cx="55" cy="128" r="4" fill="rgba(77,172,232,0.7)"/>
+          <circle cx="55" cy="141" r="3" fill="rgba(255,255,255,0.4)"/>
+          <circle cx="55" cy="154" r="4" fill="rgba(77,172,232,0.7)"/>
+          <line x1="55" y1="100" x2="55" y2="154" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+          <circle cx="225" cy="100" r="4" fill="rgba(150,100,255,0.7)"/>
+          <circle cx="225" cy="115" r="3" fill="rgba(255,255,255,0.4)"/>
+          <circle cx="225" cy="128" r="4" fill="rgba(150,100,255,0.7)"/>
+          <circle cx="225" cy="141" r="3" fill="rgba(255,255,255,0.4)"/>
+          <circle cx="225" cy="154" r="4" fill="rgba(150,100,255,0.7)"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 3: Nutrition -->
+  <div class="slide">
+    <div class="sc">
+      <div class="st">
+        <span class="stag">Nutrition</span>
+        <h1 class="sh">Nourishing Life at Every Stage</h1>
+        <p class="ss">From infant nutrition to specialized formulas for older adults, Abbott's science-based nutritional products support health and vitality through every chapter of life.</p>
+        <div class="sbtns">
+          <a href="#" class="bp">Explore Nutrition</a>
+          <a href="#" class="bo">Health Science</a>
+        </div>
+      </div>
+      <div class="sv">
+        <svg width="280" height="280" viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg">
+          <!-- Nutrition leaf/growth illustration -->
+          <circle cx="140" cy="140" r="120" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+          <!-- Leaf -->
+          <path d="M140 220 C140 220 80 175 80 125 C80 95 108 70 140 70 C172 70 200 95 200 125 C200 175 140 220 140 220Z" fill="rgba(100,220,120,0.25)" stroke="rgba(150,255,170,0.4)" stroke-width="2"/>
+          <!-- Leaf veins -->
+          <line x1="140" y1="70" x2="140" y2="220" stroke="rgba(150,255,170,0.35)" stroke-width="2"/>
+          <line x1="140" y1="110" x2="105" y2="140" stroke="rgba(150,255,170,0.25)" stroke-width="1.5"/>
+          <line x1="140" y1="130" x2="175" y2="155" stroke="rgba(150,255,170,0.25)" stroke-width="1.5"/>
+          <line x1="140" y1="150" x2="108" y2="168" stroke="rgba(150,255,170,0.25)" stroke-width="1.5"/>
+          <line x1="140" y1="170" x2="168" y2="185" stroke="rgba(150,255,170,0.25)" stroke-width="1.5"/>
+          <!-- DNA strand inside -->
+          <path d="M125 90 Q155 110 125 130 Q155 150 125 170 Q155 190 125 210" fill="none" stroke="rgba(100,220,255,0.5)" stroke-width="2.5"/>
+          <path d="M155 90 Q125 110 155 130 Q125 150 155 170 Q125 190 155 210" fill="none" stroke="rgba(100,220,255,0.5)" stroke-width="2.5"/>
+          <line x1="125" y1="90" x2="155" y2="90" stroke="rgba(100,220,255,0.4)" stroke-width="2"/>
+          <line x1="140" y1="110" x2="140" y2="110" stroke="rgba(100,220,255,0.4)" stroke-width="2"/>
+          <line x1="125" y1="130" x2="155" y2="130" stroke="rgba(100,220,255,0.4)" stroke-width="2"/>
+          <line x1="125" y1="150" x2="155" y2="150" stroke="rgba(100,220,255,0.4)" stroke-width="2"/>
+          <line x1="125" y1="170" x2="155" y2="170" stroke="rgba(100,220,255,0.4)" stroke-width="2"/>
+          <!-- Sparkles -->
+          <circle cx="68" cy="110" r="4" fill="rgba(100,220,120,0.6)"/>
+          <circle cx="212" cy="108" r="5" fill="rgba(150,255,150,0.5)"/>
+          <circle cx="215" cy="168" r="3" fill="rgba(100,220,120,0.5)"/>
+          <circle cx="64" cy="162" r="4" fill="rgba(100,200,100,0.5)"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <button class="carr" id="ap" onclick="prevSlide()" aria-label="Previous">&#8592;</button>
+  <button class="carr" id="an" onclick="nextSlide()" aria-label="Next">&#8594;</button>
+  <div id="cdots">
+    <button class="dot on" onclick="goSlide(0)"></button>
+    <button class="dot" onclick="goSlide(1)"></button>
+    <button class="dot" onclick="goSlide(2)"></button>
+  </div>
+</section>
+
+<!-- ── STOCK TICKER ────────────────────────────────────────────── -->
+<div id="ticker">
+  <div class="tlbl"><span class="tdot"></span> LIVE &nbsp;ABT</div>
+  <div class="tscr">
+    <div class="ttrk" id="ttrk">
+      <!-- Filled by JS -->
+    </div>
+  </div>
+</div>
+
+<!-- ── BUSINESS SEGMENTS ───────────────────────────────────────── -->
+<section id="segs">
+  <p class="sec-lbl fu">Our Business</p>
+  <h2 class="sec-h fu2">Four Divisions. One Purpose.</h2>
+  <p class="sec-s fu3">We create and manufacture breakthrough health technologies and market them in more than 160 countries, with an unmatched breadth of products spanning the full spectrum of healthcare.</p>
+  <div class="sgrid">
+    <div class="sc2 fu" style="--cc:#006DB6">
+      <div class="si" style="background:#e8f3fb">❤️</div>
+      <h3>Medical Devices</h3>
+      <p>Industry-leading technologies for heart, brain, and spine health — including the Aveir leadless pacemaker, Portico TAVI, and Proclaim SCS systems.</p>
+      <span class="sl">Learn more ›</span>
+    </div>
+    <div class="sc2 fu2" style="--cc:#7B2D8E">
+      <div class="si" style="background:#f3e8fb">🔬</div>
+      <h3>Diagnostics</h3>
+      <p>Core laboratory, molecular, point-of-care, and rapid diagnostics — including ARCHITECT, Alinity, and BinaxNOW platforms — running over 9 billion tests annually.</p>
+      <span class="sl">Learn more ›</span>
+    </div>
+    <div class="sc2 fu3" style="--cc:#CE0037">
+      <div class="si" style="background:#fbe8ec">💊</div>
+      <h3>Established Pharmaceuticals</h3>
+      <p>Trusted branded generics — essential medicines across gastroenterology, cardiology, and women's health — reaching patients in 170+ countries worldwide.</p>
+      <span class="sl">Learn more ›</span>
+    </div>
+    <div class="sc2 fu" style="--cc:#16a34a;transition-delay:.45s">
+      <div class="si" style="background:#e8fbed">🥛</div>
+      <h3>Nutrition</h3>
+      <p>Scientifically formulated products including Similac infant formula, Ensure adult nutrition, Glucerna for diabetes management, and PediaSure for growing children.</p>
+      <span class="sl">Learn more ›</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── STATS BAR ───────────────────────────────────────────────── -->
+<section id="stats">
+  <div class="sgr">
+    <div class="ss2 fu">
+      <div class="sn">137<em>+</em></div>
+      <div class="sl2">Years of Healthcare Innovation</div>
+    </div>
+    <div class="ss2 fu2">
+      <div class="sn">115<em>K</em></div>
+      <div class="sl2">Employees Worldwide</div>
+    </div>
+    <div class="ss2 fu3">
+      <div class="sn">160<em>+</em></div>
+      <div class="sl2">Countries &amp; Territories</div>
+    </div>
+    <div class="ss2 fu" style="transition-delay:.45s">
+      <div class="sn">$22<em>B</em></div>
+      <div class="sl2">Annual Net Sales</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── NEWS & MEDIA ───────────────────────────────────────────── -->
+<section id="news">
+  <p class="sec-lbl fu">Latest News</p>
+  <h2 class="sec-h fu2" id="news-title">News &amp; Stories</h2>
+  <p class="sec-s fu3" id="news-sub">The latest from Abbott — groundbreaking science, life-changing technologies, and stories of the people we serve.</p>
+  <div class="ngrid" id="ngrid">
+    <!-- Filled by geo JS -->
+  </div>
+  <div class="ncta fu">
+    <a href="#" class="btn-out">View All News ›</a>
+  </div>
+</section>
+
+<!-- ── INNOVATION BAND ────────────────────────────────────────── -->
+<section id="inno">
+  <div class="ii">
+    <div class="it fu">
+      <p class="sec-lbl">R&amp;D &amp; Innovation</p>
+      <h2 class="sec-h">Science That Changes Everything</h2>
+      <p class="sec-s">Abbott invests more than $2.5 billion in R&D each year, building a pipeline of technologies that address the world's most pressing health challenges.</p>
+      <div class="ifs">
+        <div class="ifeat">
+          <div class="fico">🫀</div>
+          <div>
+            <h4>Cardiovascular &amp; Neuromodulation</h4>
+            <p>Leadless pacemakers, structural heart repair, and spinal cord stimulation for life-altering conditions.</p>
+          </div>
+        </div>
+        <div class="ifeat">
+          <div class="fico">📡</div>
+          <div>
+            <h4>Continuous Glucose Monitoring</h4>
+            <p>FreeStyle Libre platform worn by over 6 million people in 60+ countries — the global CGM leader.</p>
+          </div>
+        </div>
+        <div class="ifeat">
+          <div class="fico">🧬</div>
+          <div>
+            <h4>Molecular &amp; Next-Gen Diagnostics</h4>
+            <p>Alinity m delivers high-throughput molecular testing with best-in-class sensitivity for infectious diseases.</p>
+          </div>
+        </div>
+        <div class="ifeat">
+          <div class="fico">🤖</div>
+          <div>
+            <h4>Digital Health &amp; AI</h4>
+            <p>Connected platforms turning device data into actionable insights — empowering patients and clinicians alike.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="iv fu2">
+      <div class="globe">
+        <div class="glines">
+          <span class="gpin">📍</span>
+          <span class="gpin">📍</span>
+          <span class="gpin">📍</span>
+          <span class="gpin">📍</span>
+          <span class="gpin">📍</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────────────── -->
+<footer id="ftr">
+  <div class="ft">
+    <div class="fb">
+      <div class="flogo">abbott</div>
+      <p class="ftag">A global healthcare leader that helps people live more fully at all stages of life. Our portfolio of life-changing technologies spans the spectrum of healthcare.</p>
+      <div class="fsoc">
+        <a href="#" class="fsb" title="LinkedIn">in</a>
+        <a href="#" class="fsb" title="Twitter/X">𝕏</a>
+        <a href="#" class="fsb" title="Facebook">f</a>
+        <a href="#" class="fsb" title="YouTube">▶</a>
+        <a href="#" class="fsb" title="Instagram">◎</a>
+      </div>
+    </div>
+    <div class="fc">
+      <h4>Our Business</h4>
+      <ul>
+        <li><a href="#">Medical Devices</a></li>
+        <li><a href="#">Diagnostics</a></li>
+        <li><a href="#">Established Pharma</a></li>
+        <li><a href="#">Nutrition</a></li>
+        <li><a href="#">All Products</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#">About Abbott</a></li>
+        <li><a href="#">Leadership</a></li>
+        <li><a href="#">Innovation</a></li>
+        <li><a href="#">Sustainability</a></li>
+        <li><a href="#">Abbott Fund</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Investors</h4>
+      <ul>
+        <li><a href="#">Financial Reports</a></li>
+        <li><a href="#">Stock Info</a></li>
+        <li><a href="#">SEC Filings</a></li>
+        <li><a href="#">Events &amp; Webcasts</a></li>
+        <li><a href="#">Dividend History</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="#">Newsroom</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Patient Support</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Site Map</a></li>
+      </ul>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(255,255,255,.09)">
+    <div class="fb2">
+      <span id="footer-geo">© 2025 Abbott. All rights reserved.</span>
+      <div class="fbl">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Cookie Settings</a>
+        <a href="#">Accessibility</a>
+        <a href="#">Do Not Sell My Info</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ── REGION MODAL ───────────────────────────────────────────── -->
+<div id="rmod" role="dialog" aria-modal="true" aria-label="Select your region" onclick="if(event.target===this)closeModal()">
+  <div class="mbox">
+    <div class="mhd">
+      <div>
+        <h3>Select Your Country or Region</h3>
+        <p>Choosing your location will show you relevant products, news, and contact information.</p>
+      </div>
+      <button class="mcls" onclick="closeModal()" aria-label="Close">×</button>
+    </div>
+    <div class="mbd" id="modal-regions">
+      <!-- Filled by JS -->
+    </div>
+  </div>
+</div>
+
+<!-- ── SEARCH OVERLAY ─────────────────────────────────────────── -->
+<div id="sover" onclick="if(event.target===this)closeSearch()">
+  <button id="scls" onclick="closeSearch()" aria-label="Close search">×</button>
+  <div class="sbox">
+    <div class="siw">
+      <input id="sinp" type="text" placeholder="Search Abbott — products, news, careers…" autocomplete="off">
+      <button class="ssub">&#128269;</button>
+    </div>
+    <div class="shints">
+      <button class="ht" onclick="document.getElementById('sinp').value=this.textContent">FreeStyle Libre</button>
+      <button class="ht" onclick="document.getElementById('sinp').value=this.textContent">Heart Devices</button>
+      <button class="ht" onclick="document.getElementById('sinp').value=this.textContent">Diagnostics</button>
+      <button class="ht" onclick="document.getElementById('sinp').value=this.textContent">Ensure Nutrition</button>
+      <button class="ht" onclick="document.getElementById('sinp').value=this.textContent">Investor Relations</button>
+      <button class="ht" onclick="document.getElementById('sinp').value=this.textContent">Careers</button>
+    </div>
+  </div>
+</div>
+
+<!-- ──────────────────────────────────────────────────────────── -->
+<script>
+// ── GEO CONTENT DATABASE ────────────────────────────────────────
+const GEO = {
+  US:{ flag:'🇺🇸', name:'United States', region:'North America', lang:'en',
+    hero:'Life. To the Fullest.',
+    sub:'Abbott is a global healthcare leader helping people across America live more fully at every stage of life — from heart health and diabetes management to diagnostics and nutrition.',
+    news:[
+      {cat:'Investor Relations',icon:'📈',title:'Abbott Reports Strong Fourth-Quarter Earnings, Raises Full-Year Guidance',date:'Jan 22, 2025',bg:'#e8f0fb'},
+      {cat:'Newsroom',icon:'🏥',title:'FDA Approves Abbott\'s Aveir DR Dual-Chamber Leadless Pacemaker System',date:'Feb 8, 2025',bg:'#fbeae8'},
+      {cat:'Innovation',icon:'🔬',title:'Abbott Researchers Advance Blood-Based Test for Early Alzheimer\'s Detection',date:'Mar 1, 2025',bg:'#e8fbf0'}
+    ],
+    office:'Abbott Park, Illinois, USA'
+  },
+  CA:{ flag:'🇨🇦', name:'Canada', region:'North America', lang:'en',
+    hero:'Health Innovation for Every Canadian',
+    sub:'Advancing life-changing healthcare solutions from coast to coast across Canada — for patients, caregivers, and healthcare professionals at every stage of life.',
+    news:[
+      {cat:'Newsroom',icon:'🍁',title:'Abbott Expands FreeStyle Libre Coverage Across All Canadian Provinces and Territories',date:'Feb 14, 2025',bg:'#fbeae8'},
+      {cat:'Innovation',icon:'🔬',title:'Abbott Canada Partners with University of Toronto on Cardiovascular Research Initiative',date:'Jan 30, 2025',bg:'#e8fbf0'},
+      {cat:'Community',icon:'🤝',title:'Abbott Commits C$5 Million to Indigenous Health Initiatives Across Canada',date:'Mar 5, 2025',bg:'#e8f0fb'}
+    ],
+    office:'Mississauga, Ontario, Canada'
+  },
+  GB:{ flag:'🇬🇧', name:'United Kingdom', region:'Europe', lang:'en',
+    hero:'Healthier Lives Across Great Britain',
+    sub:'Partnering with the NHS and healthcare professionals across England, Scotland, Wales, and Northern Ireland to deliver life-changing health innovations to every patient.',
+    news:[
+      {cat:'Newsroom',icon:'🏥',title:'Abbott Secures NHS England Framework Agreement for Next-Generation Diagnostic Systems',date:'Feb 18, 2025',bg:'#e8f0fb'},
+      {cat:'Innovation',icon:'🔬',title:'Abbott\'s Portico Transcatheter Aortic Valve System Receives NICE Technology Appraisal',date:'Jan 25, 2025',bg:'#fbeae8'},
+      {cat:'Sustainability',icon:'🌱',title:'Abbott UK Achieves Net-Zero Operations Across All UK Manufacturing Sites',date:'Mar 10, 2025',bg:'#e8fbf0'}
+    ],
+    office:'Maidenhead, Berkshire, United Kingdom'
+  },
+  DE:{ flag:'🇩🇪', name:'Deutschland', region:'Europa', lang:'de',
+    hero:'Gesundheit. Für ein erfülltes Leben.',
+    sub:'Abbott unterstützt Menschen in Deutschland dabei, ein gesünderes und erfüllteres Leben zu führen — von der Herzgesundheit und Diabetesversorgung bis hin zu Diagnostik und Ernährung.',
+    news:[
+      {cat:'Neuigkeiten',icon:'🏥',title:'Abbott erhält GBA-Erstattungsentscheidung für neues Herzklappensystem in Deutschland',date:'21. Feb. 2025',bg:'#e8f0fb'},
+      {cat:'Innovation',icon:'🔬',title:'Abbott Diagnostics: Neue Alinity-Hochdurchsatz-Systeme für deutsche Universitätskliniken',date:'15. Jan. 2025',bg:'#fbeae8'},
+      {cat:'Nachhaltigkeit',icon:'🌱',title:'Abbott Deutschland: 100% erneuerbare Energien an allen deutschen Standorten erreicht',date:'5. Mär. 2025',bg:'#e8fbf0'}
+    ],
+    office:'Wiesbaden, Deutschland'
+  },
+  FR:{ flag:'🇫🇷', name:'France', region:'Europe', lang:'fr',
+    hero:'La vie. À son meilleur.',
+    sub:"Abbott aide les Français à vivre plus pleinement à chaque étape de leur vie, grâce à des innovations médicales de pointe allant de la santé cardiaque à la gestion du diabète.",
+    news:[
+      {cat:'Actualités',icon:'🏥',title:"Abbott obtient la prise en charge par l'Assurance Maladie pour FreeStyle Libre 3",date:'19 Fév 2025',bg:'#e8f0fb'},
+      {cat:'Innovation',icon:'🔬',title:'Abbott France inaugure un nouveau centre de Recherche & Développement à Paris-Saclay',date:'28 Jan 2025',bg:'#fbeae8'},
+      {cat:'Durabilité',icon:'🌱',title:'Abbott France : objectif de neutralité carbone atteint dans toutes les usines françaises',date:'12 Mar 2025',bg:'#e8fbf0'}
+    ],
+    office:'Rungis, France'
+  },
+  ES:{ flag:'🇪🇸', name:'España', region:'Europa', lang:'es',
+    hero:'Vida plena. Para todos.',
+    sub:'Abbott ayuda a los españoles a vivir una vida más plena en cada etapa — con innovaciones sanitarias líderes en el mundo, desde dispositivos cardíacos hasta diagnóstico y nutrición.',
+    news:[
+      {cat:'Noticias',icon:'🏥',title:'Abbott España logra la cobertura del FreeStyle Libre en el 100% de comunidades autónomas',date:'17 Feb 2025',bg:'#e8f0fb'},
+      {cat:'Innovación',icon:'🔬',title:'Abbott lanza nuevo sistema de diagnóstico rápido Alinity para hospitales españoles',date:'5 Feb 2025',bg:'#fbeae8'},
+      {cat:'Comunidad',icon:'🤝',title:'Abbott España dona 3 millones de euros a investigación oncológica en centros públicos',date:'1 Mar 2025',bg:'#e8fbf0'}
+    ],
+    office:'Madrid, España'
+  },
+  IT:{ flag:'🇮🇹', name:'Italia', region:'Europa', lang:'it',
+    hero:"La salute. Per una vita piena.",
+    sub:'Abbott aiuta gli italiani a vivere una vita più sana e piena ad ogni fase, con tecnologie mediche innovative dalla salute cardiaca alla diagnostica e alla nutrizione.',
+    news:[
+      {cat:'Notizie',icon:'🏥',title:'Abbott Italia ottiene il rimborso SSN per il sistema FreeStyle Libre 3',date:'20 Feb 2025',bg:'#e8f0fb'},
+      {cat:'Innovazione',icon:'🔬',title:'Abbott apre nuovo laboratorio diagnostico di eccellenza a Milano',date:'4 Feb 2025',bg:'#fbeae8'},
+      {cat:'Sostenibilità',icon:'🌱',title:"Abbott Italia: raggiunto l'obiettivo zero emissioni nette in tutti i siti produttivi",date:'9 Mar 2025',bg:'#e8fbf0'}
+    ],
+    office:'Roma, Italia'
+  },
+  JP:{ flag:'🇯🇵', name:'日本', region:'アジア太平洋', lang:'ja',
+    hero:'人生を、もっと豊かに。',
+    sub:'アボットは、心疾患から糖尿病管理まで、日本のすべての人々がより健康で充実した生活を送れるよう、革新的な医療技術で支援しています。',
+    news:[
+      {cat:'ニュース',icon:'🏥',title:'アボット、日本でFreeStyle リブレ3の保険適用取得を発表',date:'2025年2月20日',bg:'#e8f0fb'},
+      {cat:'イノベーション',icon:'🔬',title:'アボット、東京医科大学と次世代心臓治療の共同研究を開始',date:'2025年1月28日',bg:'#fbeae8'},
+      {cat:'サステナビリティ',icon:'🌱',title:'アボット日本法人、2025年CO₂排出量ゼロ目標を達成',date:'2025年3月8日',bg:'#e8fbf0'}
+    ],
+    office:'東京都港区、日本'
+  },
+  CN:{ flag:'🇨🇳', name:'中国', region:'亚太地区', lang:'zh',
+    hero:'健康生活，从心开始。',
+    sub:'雅培致力于帮助中国各地的人们在生命的每个阶段都能更加充分、健康地生活——从心脏健康和糖尿病管理到诊断和营养。',
+    news:[
+      {cat:'新闻',icon:'🏥',title:'雅培新一代心脏瓣膜系统获国家药品监督管理局批准上市',date:'2025年2月15日',bg:'#e8f0fb'},
+      {cat:'创新',icon:'🔬',title:'雅培中国与北京协和医院开展肿瘤早期筛查合作研究项目',date:'2025年1月20日',bg:'#fbeae8'},
+      {cat:'可持续发展',icon:'🌱',title:'雅培中国发布2025年度可持续发展报告，提前实现碳中和目标',date:'2025年3月6日',bg:'#e8fbf0'}
+    ],
+    office:'中国上海'
+  },
+  AU:{ flag:'🇦🇺', name:'Australia', region:'Asia Pacific', lang:'en',
+    hero:'Better Health for Every Australian',
+    sub:"Abbott delivers life-changing healthcare technologies to Australians across the continent — from major cities to remote and rural communities — at every stage of life.",
+    news:[
+      {cat:'Newsroom',icon:'🏥',title:'Abbott Secures PBS Listing Expanding FreeStyle Libre 3 Access for All Australians with Diabetes',date:'Feb 12, 2025',bg:'#e8f0fb'},
+      {cat:'Innovation',icon:'🔬',title:'Abbott Partners with CSIRO on Next-Generation Point-of-Care Diagnostics for Remote Australia',date:'Jan 22, 2025',bg:'#fbeae8'},
+      {cat:'Community',icon:'🤝',title:"Abbott Australia Launches A$4 Million Indigenous Health Technology Access Programme",date:'Mar 3, 2025',bg:'#e8fbf0'}
+    ],
+    office:'Sydney, New South Wales, Australia'
+  },
+  IN:{ flag:'🇮🇳', name:'India', region:'Asia Pacific', lang:'en',
+    hero:'Transforming Healthcare Across India',
+    sub:"Abbott is committed to making quality healthcare accessible across India — from world-class metropolitan hospitals to primary health centres in rural communities.",
+    news:[
+      {cat:'Newsroom',icon:'🏥',title:"Abbott India Launches Affordable Diagnostics Programme for Tier-2 and Tier-3 Cities",date:'Feb 16, 2025',bg:'#e8f0fb'},
+      {cat:'Innovation',icon:'🔬',title:'Abbott Partners with IIT Bombay on Low-Cost Point-of-Care Diagnostic Devices',date:'Feb 2, 2025',bg:'#fbeae8'},
+      {cat:'Community',icon:'🤝',title:"Abbott India's Sunehra Kal Programme Reaches Five Million Beneficiaries Milestone",date:'Mar 7, 2025',bg:'#e8fbf0'}
+    ],
+    office:'Mumbai, Maharashtra, India'
+  },
+  BR:{ flag:'🇧🇷', name:'Brasil', region:'América Latina', lang:'pt',
+    hero:'Vida mais plena para todos os brasileiros.',
+    sub:'A Abbott está comprometida em transformar a saúde no Brasil — levando inovações médicas de ponta a cada canto do país, para pessoas em todas as etapas da vida.',
+    news:[
+      {cat:'Notícias',icon:'🏥',title:'Abbott conquista registro da ANVISA para novo sistema cardíaco de última geração no Brasil',date:'18 Fev 2025',bg:'#e8f0fb'},
+      {cat:'Inovação',icon:'🔬',title:'Abbott Brasil inaugura laboratório de inovação em saúde digital em São Paulo',date:'30 Jan 2025',bg:'#fbeae8'},
+      {cat:'Comunidade',icon:'🤝',title:'Abbott Brasil investe R$ 12 milhões em saúde preventiva para populações de baixa renda',date:'5 Mar 2025',bg:'#e8fbf0'}
+    ],
+    office:'São Paulo, Brasil'
+  },
+  MX:{ flag:'🇲🇽', name:'México', region:'América Latina', lang:'es',
+    hero:'Salud para una vida más plena.',
+    sub:'Abbott ayuda a los mexicanos a disfrutar de una vida más saludable y plena — con tecnologías médicas líderes en el mundo, desde dispositivos cardíacos hasta nutrición y diagnóstico.',
+    news:[
+      {cat:'Noticias',icon:'🏥',title:'Abbott México recibe aprobación COFEPRIS para dispositivo cardíaco de nueva generación',date:'20 Feb 2025',bg:'#e8f0fb'},
+      {cat:'Innovación',icon:'🔬',title:'Abbott y el IMSS firman acuerdo estratégico para diagnóstico molecular de enfermedades infecciosas',date:'3 Feb 2025',bg:'#fbeae8'},
+      {cat:'Comunidad',icon:'🤝',title:'Abbott México amplía programa de salud preventiva a 300 comunidades rurales',date:'8 Mar 2025',bg:'#e8fbf0'}
+    ],
+    office:'Ciudad de México, México'
+  },
+  ZA:{ flag:'🇿🇦', name:'South Africa', region:'Middle East & Africa', lang:'en',
+    hero:'Building a Healthier Africa',
+    sub:"Abbott is expanding access to world-class healthcare technology across South Africa and the broader African continent — reaching patients in underserved communities.",
+    news:[
+      {cat:'Newsroom',icon:'🏥',title:'Abbott Partners with South African Government on National HIV Rapid Diagnostic Scale-Up Initiative',date:'Feb 11, 2025',bg:'#e8f0fb'},
+      {cat:'Innovation',icon:'🔬',title:'Abbott Launches Mobile Diagnostics Laboratory Programme in Rural South Africa',date:'Jan 24, 2025',bg:'#fbeae8'},
+      {cat:'Community',icon:'🤝',title:'Abbott Foundation Commits $15 Million to Sub-Saharan Africa Health Worker Training',date:'Mar 2, 2025',bg:'#e8fbf0'}
+    ],
+    office:'Johannesburg, South Africa'
+  },
+  AE:{ flag:'🇦🇪', name:'UAE', region:'Middle East & Africa', lang:'en',
+    hero:'Pioneering Healthcare in the Middle East',
+    sub:"Abbott partners with healthcare leaders across the UAE and the broader Middle East and North Africa region to deliver innovative, life-changing medical technologies.",
+    news:[
+      {cat:'Newsroom',icon:'🏥',title:'Abbott Opens Expanded Regional Headquarters in Dubai Healthcare City',date:'Feb 24, 2025',bg:'#e8f0fb'},
+      {cat:'Innovation',icon:'🔬',title:'Abbott Partners with Mubadala Health on AI-Powered Diagnostics Platform',date:'Jan 27, 2025',bg:'#fbeae8'},
+      {cat:'Community',icon:'🤝',title:"Abbott Supports UAE National Strategy for Advanced Technology in Healthcare 2031",date:'Mar 9, 2025',bg:'#e8fbf0'}
+    ],
+    office:'Dubai, United Arab Emirates'
+  },
+  KR:{ flag:'🇰🇷', name:'대한민국', region:'아시아 태평양', lang:'ko',
+    hero:'더 풍요로운 삶을 위한 헬스케어.',
+    sub:'애보트는 한국의 모든 분들이 더욱 건강하고 풍요로운 삶을 누릴 수 있도록, 심장 건강부터 당뇨 관리, 진단, 영양까지 혁신적인 의료 기술을 제공합니다.',
+    news:[
+      {cat:'뉴스',icon:'🏥',title:'애보트, 식품의약품안전처 승인 차세대 심장판막 시스템 한국 공식 출시',date:'2025년 2월 22일',bg:'#e8f0fb'},
+      {cat:'혁신',icon:'🔬',title:'애보트-서울대병원, AI 기반 조기 진단 플랫폼 공동 연구 MOU 체결',date:'2025년 1월 30일',bg:'#fbeae8'},
+      {cat:'지속가능성',icon:'🌱',title:'애보트 코리아, 2025 탄소중립 목표 조기 달성 공식 발표',date:'2025년 3월 8일',bg:'#e8fbf0'}
+    ],
+    office:'서울특별시, 대한민국'
+  },
+  SE:{ flag:'🇸🇪', name:'Sweden', region:'Europe', lang:'sv',
+    hero:'Bättre hälsa för alla i Sverige.',
+    sub:'Abbott levererar banbrytande medicinsk teknik till patienter och vårdgivare i hela Sverige — från hjärtsjukvård och diabeteshantering till diagnostik och näring.',
+    news:[
+      {cat:'Nyheter',icon:'🏥',title:'Abbott Sverige utökar FreeStyle Libre 3-täckning via Läkemedelsförmånen',date:'17 feb 2025',bg:'#e8f0fb'},
+      {cat:'Innovation',icon:'🔬',title:'Abbott samarbetar med Karolinska Institutet om nästa generations hjärtteknologi',date:'25 jan 2025',bg:'#fbeae8'},
+      {cat:'Hållbarhet',icon:'🌱',title:'Abbott Sverige uppnår klimatneutralitet vid alla svenska anläggningar',date:'4 mar 2025',bg:'#e8fbf0'}
+    ],
+    office:'Stockholm, Sverige'
+  },
+  NL:{ flag:'🇳🇱', name:'Nederland', region:'Europa', lang:'nl',
+    hero:'Gezondheid. Volledig geleefd.',
+    sub:'Abbott helpt mensen in Nederland om volledig te leven in elke levensfase — van hartgezondheid en diabetesbeheer tot diagnostiek en voeding.',
+    news:[
+      {cat:'Nieuws',icon:'🏥',title:'Abbott Nederland behaalt vergoeding voor FreeStyle Libre 3 via Zorgverzekeringswet',date:'19 feb 2025',bg:'#e8f0fb'},
+      {cat:'Innovatie',icon:'🔬',title:'Abbott en Amsterdam UMC lanceren gezamenlijk onderzoeksprogramma voor hartfalen',date:'27 jan 2025',bg:'#fbeae8'},
+      {cat:'Duurzaamheid',icon:'🌱',title:'Abbott Nederland bereikt 100% duurzame energie in alle Nederlandse faciliteiten',date:'7 mrt 2025',bg:'#e8fbf0'}
+    ],
+    office:'Amsterdam, Nederland'
+  }
+};
+
+const REGIONS = [
+  { id:'North America', countries:['US','CA','MX'] },
+  { id:'Europe', countries:['GB','DE','FR','ES','IT','SE','NL'] },
+  { id:'Asia Pacific', countries:['JP','CN','AU','IN','KR'] },
+  { id:'Latin America', countries:['BR'] },
+  { id:'Middle East & Africa', countries:['AE','ZA'] }
+];
+
+// ── STATE ────────────────────────────────────────────────────────
+let current = 'US';
+
+// ── APPLY GEO CONTENT ────────────────────────────────────────────
+function applyGeo(code) {
+  current = code;
+  const d = GEO[code] || GEO.US;
+  document.documentElement.setAttribute('lang', d.lang || 'en');
+  document.documentElement.setAttribute('data-geo', code);
+
+  // Util bar
+  document.getElementById('geo-flag').textContent = d.flag;
+  document.getElementById('geo-name').textContent  = d.name;
+
+  // Geo banner
+  const banner = document.getElementById('gbanner');
+  if (!banner.classList.contains('gone')) {
+    document.getElementById('gbtxt').innerHTML =
+      d.flag + ' &nbsp;You are viewing content for <strong>' + d.name + '</strong>';
+  }
+
+  // Hero headline (slide 1)
+  document.getElementById('h-headline').textContent = d.hero;
+  document.getElementById('h-sub').textContent      = d.sub;
+
+  // News section
+  const grid = document.getElementById('ngrid');
+  grid.innerHTML = '';
+  d.news.forEach(function(n) {
+    const el = document.createElement('article');
+    el.className = 'nc fu';
+    el.innerHTML =
+      '<div class="nth" style="--nbg:' + n.bg + '">' +
+        '<span style="font-size:3rem">' + n.icon + '</span>' +
+        '<span class="ncat">' + n.cat + '</span>' +
+      '</div>' +
+      '<div class="nb">' +
+        '<div class="nd">' + n.date + '</div>' +
+        '<h3 class="nt">' + n.title + '</h3>' +
+        '<span class="nr">Read more ›</span>' +
+      '</div>';
+    grid.appendChild(el);
+  });
+
+  // Footer geo line
+  document.getElementById('footer-geo').textContent =
+    '© 2025 Abbott. All rights reserved. ' + d.office;
+
+  // Update modal active state
+  document.querySelectorAll('.cbtn').forEach(function(b) {
+    b.classList.toggle('cur', b.dataset.code === code);
+  });
+
+  // Trigger scroll observer re-scan
+  observeAll();
+}
+
+// ── GEO DETECTION ────────────────────────────────────────────────
+function detectGeo() {
+  // Check URL param first
+  const p = new URLSearchParams(window.location.search);
+  const forced = (p.get('region') || '').toUpperCase();
+  if (forced && GEO[forced]) { applyGeo(forced); return; }
+
+  // Try IP lookup
+  fetch('https://ipapi.co/json/')
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      const code = (d.country_code || 'US').toUpperCase();
+      applyGeo(GEO[code] ? code : 'US');
+    })
+    .catch(function() { applyGeo('US'); });
+}
+
+// ── GEO BANNER ───────────────────────────────────────────────────
+function dismissBanner() {
+  document.getElementById('gbanner').classList.add('gone');
+}
+
+// ── MODAL ────────────────────────────────────────────────────────
+function buildModal() {
+  const body = document.getElementById('modal-regions');
+  body.innerHTML = '';
+  REGIONS.forEach(function(rg) {
+    const grp = document.createElement('div');
+    grp.className = 'rgrp';
+    grp.innerHTML = '<div class="rgt">' + rg.id + '</div>';
+    const cgrd = document.createElement('div');
+    cgrd.className = 'cgrd';
+    rg.countries.forEach(function(code) {
+      const d = GEO[code];
+      if (!d) return;
+      const btn = document.createElement('button');
+      btn.className = 'cbtn' + (code === current ? ' cur' : '');
+      btn.dataset.code = code;
+      btn.innerHTML = '<span class="cflag">' + d.flag + '</span>' + d.name;
+      btn.addEventListener('click', function() {
+        applyGeo(code);
+        closeModal();
+        const banner = document.getElementById('gbanner');
+        banner.classList.remove('gone');
+        document.getElementById('gbtxt').innerHTML =
+          d.flag + ' &nbsp;Now viewing content for <strong>' + d.name + '</strong>';
+      });
+      cgrd.appendChild(btn);
+    });
+    grp.appendChild(cgrd);
+    body.appendChild(grp);
+  });
+}
+function openModal()  {
+  buildModal();
+  document.getElementById('rmod').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('rmod').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// ── SEARCH ───────────────────────────────────────────────────────
+function openSearch()  {
+  document.getElementById('sover').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  setTimeout(function(){ document.getElementById('sinp').focus(); }, 80);
+}
+function closeSearch() {
+  document.getElementById('sover').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') { closeModal(); closeSearch(); closeMob(); }
+});
+
+// ── MOBILE NAV ───────────────────────────────────────────────────
+function toggleMob() {
+  document.getElementById('mobnav').classList.toggle('open');
+}
+function closeMob() {
+  document.getElementById('mobnav').classList.remove('open');
+}
+
+// ── HEADER SCROLL ────────────────────────────────────────────────
+window.addEventListener('scroll', function() {
+  document.getElementById('hdr').classList.toggle('scrolled', window.scrollY > 10);
+}, { passive: true });
+
+// ── DROPDOWN NAV ─────────────────────────────────────────────────
+document.querySelectorAll('.ni').forEach(function(ni) {
+  ni.addEventListener('mouseenter', function() { ni.classList.add('open'); });
+  ni.addEventListener('mouseleave', function() { ni.classList.remove('open'); });
+});
+
+// ── HERO CAROUSEL ────────────────────────────────────────────────
+var slides = document.querySelectorAll('.slide');
+var dots   = document.querySelectorAll('.dot');
+var cur_s  = 0;
+var timer;
+
+function goSlide(n) {
+  slides[cur_s].classList.remove('active');
+  dots[cur_s].classList.remove('on');
+  cur_s = (n + slides.length) % slides.length;
+  slides[cur_s].classList.add('active');
+  dots[cur_s].classList.add('on');
+}
+function nextSlide() { clearInterval(timer); goSlide(cur_s + 1); startTimer(); }
+function prevSlide() { clearInterval(timer); goSlide(cur_s - 1); startTimer(); }
+function startTimer() {
+  timer = setInterval(function() { goSlide(cur_s + 1); }, 5500);
+}
+startTimer();
+
+// Pause on hover
+document.getElementById('hero').addEventListener('mouseenter', function() { clearInterval(timer); });
+document.getElementById('hero').addEventListener('mouseleave', startTimer);
+
+// ── TICKER ───────────────────────────────────────────────────────
+(function() {
+  var base = 123.45;
+  var tdata = [
+    { sym:'ABT',    p: base,        c:+0.82 },
+    { sym:'NYSE',   p: 19624.30,    c:-12.4 },
+    { sym:'S&P500', p: 5408.12,     c:+18.6 },
+    { sym:'EUR/USD',p: 1.0842,      c:-0.0012 },
+    { sym:'GBP/USD',p: 1.2731,      c:+0.0023 }
+  ];
+  function tickerHTML() {
+    return tdata.map(function(t) {
+      var dir = t.c >= 0 ? 'up' : 'dn';
+      var sym = t.c >= 0 ? '▲' : '▼';
+      var abs = Math.abs(t.c).toFixed(t.sym.includes('/') ? 4 : 2);
+      return '<span class="ti"><span class="tsym">' + t.sym + '</span>' +
+        '<span class="tpr">' + t.p.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2}) + '</span>' +
+        '<span class="tc ' + dir + '">' + sym + ' ' + abs + '</span></span>';
+    }).join('');
+  }
+  var trk = document.getElementById('ttrk');
+  var html = tickerHTML();
+  trk.innerHTML = html + html; // duplicate for seamless loop
+
+  // Simulated live price drift
+  setInterval(function() {
+    tdata[0].p += (Math.random() - 0.49) * 0.18;
+    tdata[0].c  = +(tdata[0].p - base).toFixed(2);
+    tdata[0].p  = +tdata[0].p.toFixed(2);
+    var h = tickerHTML();
+    trk.innerHTML = h + h;
+  }, 3200);
+})();
+
+// ── INTERSECTION OBSERVER (FADE-IN) ──────────────────────────────
+function observeAll() {
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('vis');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fu,.fu2,.fu3').forEach(function(el) {
+    if (!el.classList.contains('vis')) io.observe(el);
+  });
+}
+observeAll();
+
+// ── INIT ─────────────────────────────────────────────────────────
+detectGeo();
+</script>
+</body>
+</html>
