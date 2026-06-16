@@ -47,6 +47,10 @@ pwsh -File .\Reorganize-OneDrive.ps1 -Execute -NonInteractive
   confirms true duplicates by **SHA-256** (parallel). Reports each set (marking the
   oldest copy as the keeper). With `-Execute` it can move the extra copies into
   `_TO_DELETE\_Duplicates\` (kept, never deleted) after you confirm.
+  - **OneDrive Files On-Demand:** online-only (cloud) files can't be hashed without
+    downloading them, so they're **skipped and reported** by default. Add
+    `-HydrateCloudFiles` to force-download and include them (can be slow / large).
+    Hashing is wrapped in try/catch, so a single unreadable file never aborts the run.
 - **Progress + summary** — live progress bars for classify/dedupe/move and an
   end-of-run summary (moved / failed / log paths).
 

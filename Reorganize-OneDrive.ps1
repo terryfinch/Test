@@ -47,6 +47,7 @@ param(
     [string] $ExtractsFolder = "Extracts",
     [switch] $Execute,
     [switch] $FindDuplicates,
+    [switch] $HydrateCloudFiles,
     [switch] $NonInteractive,
     [int]    $ConfidenceThreshold = 3
 )
@@ -276,6 +277,13 @@ function Resolve-Collision([string]$targetPath) {
   return (Join-Path $dir ("{0} ({1}){2}" -f $name,$n,$ext))
 }
 
+# OneDrive Files On-Demand placeholder? Hashing these forces a cloud download.
+#   Offline 0x1000 | RecallOnOpen 0x40000 | RecallOnDataAccess 0x400000
+function Test-CloudOnly([System.IO.FileSystemInfo]$f) {
+  $a = [int]$f.Attributes
+  return (($a -band 0x1000) -ne 0) -or (($a -band 0x40000) -ne 0) -or (($a -band 0x400000) -ne 0)
+}
+
 $actions = [System.Collections.Generic.List[object]]::new()
 $missing = [System.Collections.Generic.List[string]]::new()
 
@@ -420,19 +428,41 @@ if ($FindDuplicates) {
   Write-Host "`nScanning for duplicates (filename + size, confirmed by SHA-256)..." -ForegroundColor Cyan
   $allFiles = Get-ChildItem -LiteralPath $Root -Force -Recurse -File -ErrorAction SilentlyContinue |
               Where-Object { $_.FullName -notmatch '\\_Reorg_Logs\\' }
+  # OneDrive Files On-Demand: online-only placeholders can't be hashed without a
+  # cloud download (which may fail). Skip + report them unless -HydrateCloudFiles.
+  if (-not $HydrateCloudFiles) {
+    $cloudOnly = @($allFiles | Where-Object { Test-CloudOnly $_ })
+    if ($cloudOnly.Count) {
+      Write-Host ("Skipping {0} online-only (cloud) file(s) — not downloaded. Use -HydrateCloudFiles to include them." -f $cloudOnly.Count) -ForegroundColor DarkYellow
+      $allFiles = $allFiles | Where-Object { -not (Test-CloudOnly $_) }
+    }
+  }
   # cheap pre-filter: same Name AND same Length
   $candidates = $allFiles | Group-Object Name, Length | Where-Object Count -gt 1 |
                 ForEach-Object { $_.Group }
   $dupSets = @()
+  $hashErrors = [System.Collections.Generic.List[string]]::new()
   if ($candidates) {
     $hashed = $candidates | ForEach-Object -ThrottleLimit 8 -Parallel {
-      [pscustomobject]@{
-        Path=$_.FullName; Name=$_.Name; Length=$_.Length
-        Modified=$_.LastWriteTime
-        Hash=(Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash
+      try {
+        [pscustomobject]@{
+          Path=$_.FullName; Name=$_.Name; Length=$_.Length; Modified=$_.LastWriteTime
+          Hash=(Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256 -ErrorAction Stop).Hash; Error=$null
+        }
+      } catch {
+        [pscustomobject]@{
+          Path=$_.FullName; Name=$_.Name; Length=$_.Length; Modified=$_.LastWriteTime
+          Hash=$null; Error=$_.Exception.Message
+        }
       }
     }
-    $dupSets = @($hashed | Group-Object Hash | Where-Object Count -gt 1)
+    foreach ($h in @($hashed | Where-Object Error)) { $hashErrors.Add($h.Path) }
+    $dupSets = @($hashed | Where-Object Hash | Group-Object Hash | Where-Object Count -gt 1)
+  }
+  if ($hashErrors.Count) {
+    Write-Host ("{0} file(s) could not be hashed and were skipped:" -f $hashErrors.Count) -ForegroundColor DarkYellow
+    $hashErrors | Select-Object -First 15 | ForEach-Object { Write-Host "   $_" -ForegroundColor DarkYellow }
+    if ($hashErrors.Count -gt 15) { Write-Host ("   ... and {0} more" -f ($hashErrors.Count - 15)) -ForegroundColor DarkYellow }
   }
   if ($dupSets.Count) {
     Write-Host ("Found {0} duplicate set(s):" -f $dupSets.Count) -ForegroundColor Magenta
